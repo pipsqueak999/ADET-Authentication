@@ -59,9 +59,12 @@ export default function RegisterPage() {
       </video>
       <div className="absolute inset-0 bg-black/40 z-10"></div>
 
+      <div className="flex justify-start w-130 h-130 z-30">
+        <img src="matribot.png" alt="matribot" />
+      </div>
       <Card className="w-full max-w-lg p-6 z-30 backdrop-blur-xl bg-white/10 ">
         <CardContent>
-          <h1 className="flex text-3xl font-bold text-[#1322A3] mb-10 justify-center">
+          <h1 className="flex text-3xl font-bold text-[#1322A3] mb-5 justify-center">
             Create New Account
           </h1>
 
@@ -76,8 +79,8 @@ export default function RegisterPage() {
               />
               <label className="absolute left-3 top-2 pb-2 text-gray-400 transition-all duration-200 transform origin-left
       peer-placeholder-shown:top-6 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
-      peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500
-      hover:-translate-y-1 hover:text-blue-500 z-10">
+      peer-focus:top-0 peer-focus:text-sm peer-focus:text-white
+      hover:-translate-y-1 hover:text-white">
                 Username
               </label>
             </div>
@@ -92,8 +95,8 @@ export default function RegisterPage() {
               />
               <label className="absolute left-3 top-2 text-gray-400 transition-all duration-200 transform origin-left
       peer-placeholder-shown:top-6 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
-      peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500
-      hover:-translate-y-1 hover:text-blue-500">
+      peer-focus:top-0 peer-focus:text-sm peer-focus:text-white
+      hover:-translate-y-1 hover:text-white">
                 Email
               </label>
             </div>
@@ -108,15 +111,15 @@ export default function RegisterPage() {
               />
               <label className="absolute left-3 top-2 text-gray-400 transition-all duration-200 transform origin-left
       peer-placeholder-shown:top-6 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
-      peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500
-      hover:-translate-y-1 hover:text-blue-500">
+      peer-focus:top-0 peer-focus:text-sm peer-focus:text-white
+      hover:-translate-y-1 hover:text-white">
                 Password
               </label>
             </div>
 
             <div className="flex gap-4">
               <Select>
-                <SelectTrigger className="w-[50%]">
+                <SelectTrigger className="w-[50%] text-white">
                   <SelectValue placeholder="Sex" />
                 </SelectTrigger>
                 <SelectContent>
@@ -127,7 +130,7 @@ export default function RegisterPage() {
               </Select>
 
               <Select>
-                <SelectTrigger className="w-[50%]">
+                <SelectTrigger className="w-[50%] text-white">
                   <SelectValue placeholder="Age" />
                 </SelectTrigger>
                 <SelectContent>
@@ -145,13 +148,15 @@ export default function RegisterPage() {
             <Button className="w-full" type="submit">Register</Button>
           </form>
 
-          <Button
-            variant="link"
-            className="mt-2 w-full"
-            onClick={() => router.push('/login')}
-          >
-            Back to Login
-          </Button>
+          <div className="flex justify-center">
+            <Button
+              variant="link"
+              className="flex mt-2 w-[30%] text-gray-500 justify-center item-center"
+              onClick={() => router.push('/login')}
+            >
+              Back to Login
+            </Button>
+          </div>
 
         </CardContent>
       </Card>
