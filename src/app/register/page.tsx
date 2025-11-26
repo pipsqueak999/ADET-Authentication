@@ -152,9 +152,17 @@ export default function RegisterPage() {
             <Button
               variant="link"
               className="flex mt-2 w-[30%] text-gray-500 justify-center item-center"
-              onClick={() => router.push('/login')}
+              onClick={() => router.push('/login-username')}
             >
               Back to Login
+            </Button>
+
+            <Button
+              variant="link"
+              className="flex mt-2 w-[30%] text-gray-500 justify-center item-center"
+              onClick={() => router.push('/')}
+            >
+              Dashboard
             </Button>
           </div>
 
