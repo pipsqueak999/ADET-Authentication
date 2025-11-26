@@ -143,7 +143,7 @@ export default function Home() {
           <Button onClick={() => {
                       setLoading(true);
                       setTimeout(() => {
-                        router.push("/login");
+                        router.push("/register");
                       }, 800);
                     }}
             className="w-[30%] rounded-full border border-purple-400 text-purple-400 px-6 py-5 mb-5">
@@ -153,7 +153,7 @@ export default function Home() {
           <Button onClick={() => {
                       setLoading(true);
                       setTimeout(() => {
-                        router.push("/register");
+                        router.push("/login");
                       }, 800);
                     }}
             className="w-[30%] rounded-full border border-purple-400 text-purple-400 px-6 py-5">
