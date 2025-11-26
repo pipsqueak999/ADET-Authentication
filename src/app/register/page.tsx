@@ -66,24 +66,53 @@ export default function RegisterPage() {
           </h1>
 
           <form onSubmit={handleRegister} className="space-y-4">
-            <Input
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
+            <div className="relative">
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Username"
+                className="peer pt-6 pb-2 px-3 border-b rounded w-full placeholder-transparent focus:outline-none"
+              />
+              <label className="absolute left-3 top-2 pb-2 text-gray-400 transition-all duration-200 transform origin-left
+      peer-placeholder-shown:top-6 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+      peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500
+      hover:-translate-y-1 hover:text-blue-500 z-10">
+                Username
+              </label>
+            </div>
 
-            <Input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <Input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className="relative">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                className="peer pt-6 pb-2 px-3 border-b rounded w-full placeholder-transparent focus:outline-none"
+              />
+              <label className="absolute left-3 top-2 text-gray-400 transition-all duration-200 transform origin-left
+      peer-placeholder-shown:top-6 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+      peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500
+      hover:-translate-y-1 hover:text-blue-500">
+                Email
+              </label>
+            </div>
+
+            <div className="relative">
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                className="peer pt-6 pb-2 px-3 border-b rounded w-full placeholder-transparent focus:outline-none"
+              />
+              <label className="absolute left-3 top-2 text-gray-400 transition-all duration-200 transform origin-left
+      peer-placeholder-shown:top-6 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+      peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-500
+      hover:-translate-y-1 hover:text-blue-500">
+                Password
+              </label>
+            </div>
 
             <div className="flex gap-4">
               <Select>
