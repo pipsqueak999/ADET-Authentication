@@ -91,7 +91,7 @@ export default function Home() {
                     onClick={() => {
                       setLoading(true);
                       setTimeout(() => {
-                        router.push("/login-username");
+                        router.push("/login");
                       }, 800);
                     }}
                     variant="ghost"
@@ -153,7 +153,7 @@ export default function Home() {
           <Button onClick={() => {
                       setLoading(true);
                       setTimeout(() => {
-                        router.push("/login-username");
+                        router.push("/login");
                       }, 800);
                     }}
             className="w-[30%] rounded-full border border-purple-400 text-purple-400 px-6 py-5">

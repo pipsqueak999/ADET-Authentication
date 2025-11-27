@@ -95,14 +95,6 @@ export default function LoginPage() {
           </form>
 
           <div className="flex justify-center">
-            <Button
-              variant="link"
-              className="flex mt-2 w-[30%] text-gray-500"
-              onClick={() => router.push('/login-email')}
-            >
-              Login using Email
-            </Button>
-
              <Button
               variant="link"
               className="flex mt-2 w-[30%] text-gray-500"
