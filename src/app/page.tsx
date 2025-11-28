@@ -48,7 +48,7 @@ export default function Home() {
           aria-label="Go to home"
         >
           <img src="Codesandbox.png" alt="logo" className="flex w-[50px] h-[50px] mt-1 mr-3" />
-          Matrix
+          <img src="title.png" alt="matrix" className="z-30 w-[30%] h-[30%] mt-2 "/>
         </button>
 
         <div className="flex justify-end">
