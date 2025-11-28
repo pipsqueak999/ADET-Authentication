@@ -122,15 +122,3 @@
 
   
 }
-
-@font-face {
-  font-family: 'Blackpast';
-  src: url('/fonts/Blackpast/Blackpast-Regular.ttf') format('truetype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Blackpast';
-  src: url('/fonts/Blackpast/Blackpast-Bold.ttf') format('truetype');
-  font-weight: 700;
-}
