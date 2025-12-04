@@ -279,7 +279,7 @@ export default function DashboardHome() {
                 </div>
             </div>
             
-            {*/ modify */}
+            {/* modify */}
             <div className="w-full flex flex-col items-center mt-10 px-4">
 
     <h2 className="text-black text-lg font-bold mb-4">Latest Tech</h2>
@@ -318,7 +318,6 @@ export default function DashboardHome() {
     {/* Source Code Title */}
     <h2 className="text-black text-lg font-bold mt-4">Source Code</h2>
 </div>
-        </div>
         </div>
     )
 }
