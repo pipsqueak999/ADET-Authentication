@@ -278,6 +278,47 @@ export default function DashboardHome() {
                     </NavigationMenu>
                 </div>
             </div>
+            
+            {*/ modify */}
+            <div className="w-full flex flex-col items-center mt-10 px-4">
+
+    <h2 className="text-black text-lg font-bold mb-4">Latest Tech</h2>
+
+    {/* MAIN GRID */}
+    <div className="grid grid-cols-2 gap-6 w-full max-w-4xl">
+
+        {/* Top Left Rounded Card */}
+        <div className="w-full h-80 bg-[#8da3d9]/50 border border-white/40 rounded-3xl"></div>
+
+        {/* Top Right Rectangle */}
+        <div className="w-full h-50 bg-[#8da3d9]/50 border border-white/40 rounded-xl pb-0"></div>
+
+        {/* Right Rectangle Under */}
+        <div className="col-start-2 w-full h-20 bg-[#8da3d9]/50 border border-white/40 rounded-xl "></div>
+
+        {/* Bottom Left Long Rectangle */}
+        <div className="col-start-1 w-full h-28 bg-[#8da3d9]/50 border border-white/40 rounded-xl"></div>
+
+        {/* Bottom Right Rounded Card */}
+        <div className="col-start-2 w-full h-40 bg-[#8da3d9]/50 border border-white/40 rounded-3xl"></div>
+
+        {/* Bottom Small Rectangle */}
+        <div className="col-start-1 w-full h-16 bg-[#8da3d9]/50 border border-white/40 rounded-xl"></div>
+
+    </div>
+
+    {/* Pagination Dots */}
+    <div className="flex gap-2 mt-6">
+        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+    </div>
+
+    {/* Source Code Title */}
+    <h2 className="text-black text-lg font-bold mt-4">Source Code</h2>
+</div>
+        </div>
         </div>
     )
 }
