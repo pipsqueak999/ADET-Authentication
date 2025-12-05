@@ -88,7 +88,7 @@ export default function DashboardHome() {
     })
 
     return (
-        <div className="relative flex min-h-screen justify-center font-sans overflow-hidden inset-0 bg-[#273d87ff]/40 z-10 rounded ">
+        <div className="relative flex flex-col min-h-screen justify-start font-sans overflow-hidden inset-0 bg-[#273d87ff]/40 z-10 rounded "> 
             <div className="relative z-10 w-full h-20 bg-white/40 backdrop-blur-lg grid grid-cols-2 grid-rows-1 gap-4 items-center px-4">
                 <div className="flex {blackpastFont.className}">
                     <img src="Codesandbox@2x.png" alt="logo" className="flex w-[50px] h-[50px] mt-3 mr-3 z-50 justify-center item-center" />
