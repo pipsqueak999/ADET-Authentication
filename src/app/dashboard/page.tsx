@@ -112,10 +112,14 @@ export default function DashboardHome() {
                             <NavigationMenuItem>
                                 <div
                                     className="relative cursor-pointer"
+<<<<<<< HEAD
                                     onClick={() => {
                                         setActiveIndex(0);
                                         document.getElementById("tech")?.scrollIntoView({ behavior: "smooth" });
                                     }}
+=======
+                                    onClick={() => setActiveIndex(0)}
+>>>>>>> 36787fa867362e74ecd55dd2fb6526a20f5f3965
                                 >
                                     <img src="cpu.svg" alt="cpu feed" className="relative w-[50%] h-[50%] z-10 px-2 py-2 ml-7 font-semibold text-purple-700 text-lg" />
                                     <span
@@ -129,10 +133,14 @@ export default function DashboardHome() {
                             <NavigationMenuItem>
                                 <div
                                     className="relative cursor-pointer"
+<<<<<<< HEAD
                                     onClick={() => {
                                         setActiveIndex(1);
                                         document.getElementById("code")?.scrollIntoView({ behavior: "smooth" });
                                     }}
+=======
+                                    onClick={() => setActiveIndex(1)}
+>>>>>>> 36787fa867362e74ecd55dd2fb6526a20f5f3965
                                 >
                                     <img src="source-code.svg" alt="code feed" className="relative w-[50%] h-[50%] z-10 px-2 py-2 ml-7 font-semibold text-purple-700 text-lg" />
                                     <span
@@ -212,7 +220,11 @@ export default function DashboardHome() {
                                                     <SheetDescription></SheetDescription>
                                                     <div className="flex items-center gap-4 mt-10">
                                                         <h1 className="text-bold font-sans text-[40px] text-white shadow-lg">
+<<<<<<< HEAD
                                                             {fullname || 'Guest'}
+=======
+                                                            {fullname || username || 'Guest'}
+>>>>>>> 36787fa867362e74ecd55dd2fb6526a20f5f3965
                                                         </h1>
                                                         <Popover>
                                                             <PopoverTrigger>
@@ -288,6 +300,7 @@ export default function DashboardHome() {
             {/* modify */}
             <div className="w-full flex flex-col items-center mt-10 px-4">
 
+<<<<<<< HEAD
                 <h1 id="tech" className="text-4xl font-bold text-white/70 drop-shadow-[0_0_14px_#aabcf0] p-5">
                 Latest Tech
                 </h1>
@@ -386,3 +399,44 @@ export default function DashboardHome() {
     )
 }
 
+=======
+    <h2 className="text-black text-lg font-bold mb-4">Latest Tech</h2>
+
+    {/* MAIN GRID */}
+    <div className="grid grid-cols-2 gap-6 w-full max-w-4xl">
+
+        {/* Top Left Rounded Card */}
+        <div className="w-full h-80 bg-[#8da3d9]/50 border border-white/40 rounded-3xl"></div>
+
+        {/* Top Right Rectangle */}
+        <div className="w-full h-50 bg-[#8da3d9]/50 border border-white/40 rounded-xl pb-0"></div>
+
+        {/* Right Rectangle Under */}
+        <div className="col-start-2 w-full h-20 bg-[#8da3d9]/50 border border-white/40 rounded-xl "></div>
+
+        {/* Bottom Left Long Rectangle */}
+        <div className="col-start-1 w-full h-28 bg-[#8da3d9]/50 border border-white/40 rounded-xl"></div>
+
+        {/* Bottom Right Rounded Card */}
+        <div className="col-start-2 w-full h-40 bg-[#8da3d9]/50 border border-white/40 rounded-3xl"></div>
+
+        {/* Bottom Small Rectangle */}
+        <div className="col-start-1 w-full h-16 bg-[#8da3d9]/50 border border-white/40 rounded-xl"></div>
+
+    </div>
+
+    {/* Pagination Dots */}
+    <div className="flex gap-2 mt-6">
+        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+    </div>
+
+    {/* Source Code Title */}
+    <h2 className="text-black text-lg font-bold mt-4">Source Code</h2>
+</div>
+        </div>
+    )
+}
+>>>>>>> 36787fa867362e74ecd55dd2fb6526a20f5f3965
