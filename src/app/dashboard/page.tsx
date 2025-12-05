@@ -207,53 +207,62 @@ export default function DashboardHome() {
                                             ${activeIndex === 4 ? 'scale-100 opacity-100 bg-[#B6EEF0]' : 'scale-0 opacity-0'}`}
                                                 ></span>
                                             </SheetTrigger>
-                                            <SheetContent className="backdrop-blur-lg bg-blue-1000">
+                                            <SheetContent className="backdrop-blur-lg bg-blue-1000 h-full overflow-y-auto p-6">
                                                 <SheetHeader>
                                                     <SheetTitle></SheetTitle>
                                                     <SheetDescription></SheetDescription>
+
+                                                    {/* User Header */}
                                                     <div className="flex items-center gap-4 mt-10">
-                                                        <h1 className="text-bold font-sans text-[40px] text-white shadow-lg">
+                                                        <h1 className="font-bold font-sans text-[40px] text-white shadow-lg">
                                                             {fullname || 'Guest'}
                                                         </h1>
+
                                                         <Popover>
                                                             <PopoverTrigger>
                                                                 <img
                                                                     src="notification.svg"
                                                                     alt="notification bell"
-                                                                    className="ml-20 w-10 h-10 brightness-1000 cursor-pointer"
+                                                                    className="ml-20 w-10 h-10 cursor-pointer"
                                                                 />
                                                             </PopoverTrigger>
                                                             <PopoverContent className="relative right-100 h-100 flex justify-center items-center">
-                                                                This will show your notifications.</PopoverContent>
+                                                                This will show your notifications.
+                                                            </PopoverContent>
                                                         </Popover>
                                                     </div>
-                                                    <p className="flex text-bold font-sans text-[20px] shadow-lg text-gray-400">
+
+                                                    {/* Username */}
+                                                    <p className="font-bold font-sans text-[20px] shadow-lg text-gray-400">
                                                         {username || 'Unknown'}
                                                     </p>
+
+                                                    {/* Token Section */}
                                                     <p>Your Bearer Token:</p>
-                                                    <pre className="p-2 bg-slate-100 text-xs mt-2 break-all">{token}</pre>
+                                                    <pre className="p-2 bg-slate-100 text-xs mt-2 break-all overflow-auto max-h-32 w-full rounded-md">
+                                                        {token}
+                                                    </pre>
                                                 </SheetHeader>
-                                                <div className="flex justify-center items-center w-[90%] pl-4 mt-1 text-white">
-                                                    <Accordion type="single"
-                                                        collapsible
-                                                        defaultValue="item-1"
-                                                        className="w-full mt-10">
+
+                                                {/* Accordion Section */}
+                                                <div className="flex justify-center items-center w-full pl-4 mt-6">
+                                                    <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
                                                         <AccordionItem value="item-1">
                                                             <AccordionTrigger>My Networks</AccordionTrigger>
                                                             <AccordionContent className="p-5">
-                                                                This is where you see your <em>matrix</em> frieds lists and your contacts!
+                                                                This is where you see your <em>matrix</em> friends lists and your contacts!
                                                             </AccordionContent>
                                                         </AccordionItem>
                                                         <AccordionItem value="item-2">
                                                             <AccordionTrigger>Informations</AccordionTrigger>
                                                             <AccordionContent className="p-5">
-                                                                This is where you see your <em>matrix</em> infortion!
+                                                                This is where you see your <em>matrix</em> information!
                                                             </AccordionContent>
                                                         </AccordionItem>
                                                         <AccordionItem value="item-3">
                                                             <AccordionTrigger>Job Description</AccordionTrigger>
                                                             <AccordionContent className="p-5">
-                                                                Your job descrition in <em>matrix</em> Society
+                                                                Your job description in <em>matrix</em> Society
                                                             </AccordionContent>
                                                         </AccordionItem>
                                                         <AccordionItem value="item-4">
@@ -264,18 +273,23 @@ export default function DashboardHome() {
                                                         </AccordionItem>
                                                     </Accordion>
                                                 </div>
-                                                <div className="flex justify-center items-center h-full w-full ">
+
+                                                {/* Logout Button */}
+                                                <div className="flex justify-center items-center h-full w-full mt-6 birghtness-100">
                                                     <img
                                                         onClick={handleLogout}
                                                         src="logout.svg"
                                                         alt="logout"
-                                                        className="w-10 h-10 brightness-1000 cursor-pointer"
+                                                        className="w-10 h-10 cursor-pointer"
                                                     />
                                                 </div>
-                                                <p className="relative mt-10 p-4 text-white flex justify-center items-center">
+
+                                                {/* Footer */}
+                                                <p className="mt-10 p-4 text-white flex justify-center items-center">
                                                     © 2025 Matrix Society • All Rights Reserved
                                                 </p>
                                             </SheetContent>
+
                                         </Sheet>
                                     </div>
                                 </div>
@@ -332,7 +346,6 @@ export default function DashboardHome() {
             shadow-[0_0_20px_5px_rgba(90,110,200,0.25)]
             rounded-2xl"></div>
 
-                        
                     </div>
 
     </div>
