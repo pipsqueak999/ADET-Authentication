@@ -1,0 +1,168 @@
+[33mcommit 692aa82caeb5915b9d768b5bb6dc48c55449537b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Merge: 07ab7eb 36787fa
+Author: kyrie-mint <francissinogbaicaro@gmail.com>
+Date:   Fri Dec 5 22:12:03 2025 +0800
+
+    Resolve merge conflicts with remote main
+
+[33mcommit 07ab7ebb0b4b4c76be2fd1896ad7533bc2b3dd45[m
+Author: kyrie-mint <francissinogbaicaro@gmail.com>
+Date:   Fri Dec 5 22:03:34 2025 +0800
+
+    Upload local edits from new laptop
+
+[33mcommit 36787fa867362e74ecd55dd2fb6526a20f5f3965[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Fri Dec 5 10:29:06 2025 +0800
+
+    Change layout from flex to flex-col in dashboard
+
+[33mcommit 06ebca7bc840179d9bf4dd0eb65a1046c46de5ca[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Thu Dec 4 20:14:25 2025 +0800
+
+    Fix comment syntax in page.tsx
+
+[33mcommit b7301af35484caed1d4f8766e07ba00a955b224c[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Thu Dec 4 20:03:27 2025 +0800
+
+    Add layout for Latest Tech and Source Code sections
+
+[33mcommit 11fec13300aa50d1615e29513915a74bc6a4a150[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Sat Nov 29 02:36:16 2025 +0800
+
+    dashboard need debugginh
+
+[33mcommit 806885d8917e9ddedb93e97ac6cbe8b664b71c7e[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Fri Nov 28 23:47:16 2025 +0800
+
+    matrix image added
+
+[33mcommit 08478aabb415e38f20ae8a1fa6c166f8287609b9[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Fri Nov 28 23:44:17 2025 +0800
+
+    font cleared
+
+[33mcommit 9c60625811ac9d21f6a09d12cb4c97b296b454b5[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Fri Nov 28 22:45:52 2025 +0800
+
+    modified
+
+[33mcommit 4ea0e0bb03eca4010cc7627d683e58e279c430bc[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Fri Nov 28 20:24:31 2025 +0800
+
+    file for adding font
+
+[33mcommit 0d9ad3f72db6782a1538013386d625b41084eb64[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Fri Nov 28 20:08:05 2025 +0800
+
+    changed bg
+
+[33mcommit 8f81bf4934e1de57fc2fdaac95afd689e8c2ca92[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Fri Nov 28 20:06:13 2025 +0800
+
+    Blackpast font added
+
+[33mcommit da9628eaf57b56b3f88447ca388564c229931c41[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Fri Nov 28 16:12:18 2025 +0800
+
+    icons added
+
+[33mcommit 01891bc6a4834dcf9a54eeee00e5ee383318d774[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Fri Nov 28 01:42:24 2025 +0800
+
+    frontend connect to backend
+
+[33mcommit b150d17884aca4d2731b11d5cc4b0d72d75b3037[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Thu Nov 27 23:00:14 2025 +0800
+
+    login bug fix
+
+[33mcommit 2ec4e307aa5b5ed132490aa5fdd546699e7b2e71[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 17:36:03 2025 +0800
+
+    frontend login page - 70%
+
+[33mcommit fce273d5ee95072786dc36780540f02097dbd15b[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 16:56:05 2025 +0800
+
+    fix bug
+
+[33mcommit 055242d2a1e3d89b5431e193e440845c22b0c334[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 16:51:36 2025 +0800
+
+    fix bug
+
+[33mcommit dd2bb22c9026e87d880720723490d3d58682ce5d[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 16:39:21 2025 +0800
+
+    register page done
+
+[33mcommit 2a80b8390a94422442bb7e0687c030fbf8c0a493[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 16:38:23 2025 +0800
+
+    new images
+
+[33mcommit c2e492ca2aade35607bc3245343931a98729846c[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 15:53:05 2025 +0800
+
+    matribot added
+
+[33mcommit d68ad926ad7ffa414ccb81f913555dfa6d52cff8[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 15:42:55 2025 +0800
+
+    hover effect added
+
+[33mcommit 7c4b88f24b1eebd9c69eb4e63257984328ffcfd6[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 13:54:33 2025 +0800
+
+    register page modify
+
+[33mcommit 6f15b5112e7b3f8bd61f45e1b6581e686471a269[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 13:01:34 2025 +0800
+
+    bug fixed
+
+[33mcommit a0357e501af2e122bfdfb961f74047896290a54e[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 12:53:29 2025 +0800
+
+    landing page done
+
+[33mcommit a2cf817c2bb8e58a7ee6d510a80cd62935cf53af[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Wed Nov 26 12:52:23 2025 +0800
+
+    added new images
+
+[33mcommit 22494dc79ea9d9b1166f178a461c8be52541584a[m
+Author: Francis Icaro <francissinogbaicaro@gmail.com>
+Date:   Tue Nov 25 18:25:49 2025 +0800
+
+    inital commit
+
+[33mcommit 6711f931c2daab854590df73dbe240f21c9c2753[m
+Author: unknown <mjbeso@gbox.ncf.edu.ph>
+Date:   Mon Nov 24 07:49:51 2025 +0800
+
+    Initial commit from Create Next App
