@@ -214,16 +214,16 @@ export default function DashboardHome() {
 
                                                     {/* User Header */}
                                                     <div className="flex items-center gap-4 mt-10">
-                                                        <h1 className="font-bold font-sans text-[40px] text-white shadow-lg">
+                                                        <h1 className="w-[50%]font-bold font-sans text-[40px] text-white shadow-lg">
                                                             {fullname || 'Guest'}
                                                         </h1>
 
                                                         <Popover>
                                                             <PopoverTrigger>
                                                                 <img
-                                                                    src="notification.svg"
+                                                                    src="notification.png"
                                                                     alt="notification bell"
-                                                                    className="ml-20 w-10 h-10 cursor-pointer"
+                                                                    className="ml-30 w-10 h-10 cursor-pointer drop-shadow-[0_0_14px_#aabcf0]"
                                                                 />
                                                             </PopoverTrigger>
                                                             <PopoverContent className="relative right-100 h-100 flex justify-center items-center">
@@ -238,14 +238,14 @@ export default function DashboardHome() {
                                                     </p>
 
                                                     {/* Token Section */}
-                                                    <p>Your Bearer Token:</p>
+                                                    <p className="text-gray-500">Your Bearer Token:</p>
                                                     <pre className="p-2 bg-slate-100 text-xs mt-2 break-all overflow-auto max-h-32 w-full rounded-md">
                                                         {token}
                                                     </pre>
                                                 </SheetHeader>
 
                                                 {/* Accordion Section */}
-                                                <div className="flex justify-center items-center w-full pl-4 mt-6">
+                                                <div className="flex justify-center items-center w-full pl-4 mt-6 text-white">
                                                     <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
                                                         <AccordionItem value="item-1">
                                                             <AccordionTrigger>My Networks</AccordionTrigger>
@@ -275,19 +275,22 @@ export default function DashboardHome() {
                                                 </div>
 
                                                 {/* Logout Button */}
-                                                <div className="flex justify-center items-center h-full w-full mt-6 birghtness-100">
+                                                <div className="flex justify-center items-center h-full w-full mt-6">
                                                     <img
                                                         onClick={handleLogout}
-                                                        src="logout.svg"
+                                                        src="logout.png"
                                                         alt="logout"
-                                                        className="w-10 h-10 cursor-pointer"
+                                                        className="w-10 h-10 cursor-pointer birghtness-100 z-50 drop-shadow-[0_0_14px_#aabcf0]"
                                                     />
                                                 </div>
 
                                                 {/* Footer */}
-                                                <p className="mt-10 p-4 text-white flex justify-center items-center">
-                                                    © 2025 Matrix Society • All Rights Reserved
-                                                </p>
+                                                <div className="justify-center items-center">
+                                                    <p className="mt-10 p-4 text-white">
+                                                        © 2025 Matrix Society • All Rights Reserved
+                                                    </p>
+                                                </div>
+                                                
                                             </SheetContent>
 
                                         </Sheet>
