@@ -80,6 +80,11 @@ export default function DashboardHome() {
         router.push("/login");
     }
 
+    function handleCredibilities() {
+        router.push("/credibilities")
+    }
+   
+
     const [activeIndex, setActiveIndex] = useState(0);
 
     const [dateRange, setDateRange] = React.useState<DateRange | undefined>({
@@ -272,6 +277,16 @@ export default function DashboardHome() {
                                                             </AccordionContent>
                                                         </AccordionItem>
                                                     </Accordion>
+                                                </div>
+
+                                                <div>
+                                                <Button
+                                                variant="outline" 
+                                                onClick={handleCredibilities}
+                                                >
+                                                    Credebilities
+                                                </Button>
+                                                
                                                 </div>
 
                                                 {/* Logout Button */}
