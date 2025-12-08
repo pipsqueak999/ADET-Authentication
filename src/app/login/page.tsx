@@ -5,7 +5,7 @@ import { useState, FormEvent } from 'react';
 import { saveToken } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { API_BASE } from '@/lib/config';
+import { AUTH_BASE } from '@/lib/config';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function LoginPage() {
     try {
        const startTime = Date.now();
 
-      const res = await fetch(`${API_BASE}/login`, {
+      const res = await fetch(`${AUTH_BASE}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
