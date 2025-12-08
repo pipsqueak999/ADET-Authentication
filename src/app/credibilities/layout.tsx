@@ -17,6 +17,7 @@ export default function DashboardLogout({ children }: {
 
     return (
         <div className="bg-[#0d013bff]/60 backdrop-blur-md p-3 shadow-xl bg-[radial-gradient(circle,rgba(30,64,175,0.4)_0%,rgba(10,20,60,1)_80%)]">
+            
             {children}
         </div>
     )
