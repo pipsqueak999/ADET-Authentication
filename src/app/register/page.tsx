@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useState, FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { API_BASE } from '@/lib/config';
+import { AUTH_BASE } from '@/lib/config';
 import {
   Select,
   SelectContent,
@@ -41,7 +41,7 @@ export default function RegisterPage() {
       // Ensure loading lasts at least 2 seconds
       const startTime = Date.now();
 
-      const res = await fetch(`${API_BASE}/register`, {
+      const res = await fetch(`${AUTH_BASE}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
