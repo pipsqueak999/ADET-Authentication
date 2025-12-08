@@ -22,19 +22,16 @@ export default function DashboardPage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    // Form state for create / edit
     const [positionCode, setPositionCode] = useState('');
     const [positionName, setPositionName] = useState('');
     const [editingId, setEditingId] = useState<number | null>(null);
 
-    // Ensure user is authenticated
     useEffect(() => {
         const token = getToken();
         if (!token) {
             router.push('/login');
         }
         fetchPositions();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     function authHeaders() {
@@ -45,7 +42,6 @@ export default function DashboardPage() {
         };
     }
 
-    /* Method to fetch the data from the backend [GET] */
     async function fetchPositions() {
         setLoading(true);
         setError(null);
@@ -56,7 +52,6 @@ export default function DashboardPage() {
             });
 
             if (res.status === 401) {
-                // unauthorized – log out and redirect
                 logoutUser();
                 router.push('/login');
                 return;
@@ -72,7 +67,6 @@ export default function DashboardPage() {
         }
     }
 
-    /* This handles the creation of data (positions) using the POST Method and data modification using the PUT Method */
     async function handleCreateOrUpdate(e: React.FormEvent) {
         e.preventDefault();
         setError(null);
@@ -82,14 +76,12 @@ export default function DashboardPage() {
         try {
             let res: Response;
             if (editingId) {
-                // update
                 res = await fetch(`${API_BASE}/positions/${editingId}`, {
                     method: 'PUT',
                     headers: authHeaders(),
                     body: JSON.stringify(payload),
                 });
             } else {
-                // create
                 res = await fetch(`${API_BASE}/positions`, {
                     method: 'POST',
                     headers: authHeaders(),
@@ -98,147 +90,165 @@ export default function DashboardPage() {
             }
 
             if (res.status === 401) {
-            logoutUser();
-            router.push('/login');
-            return;
-        }
-
-        if (!res.ok) {
-            const err = await res.json().catch(() => ({}));
-            throw new Error(err?.message || `Request failed: ${res.status}`);
-        }
-
-        // success - refresh list
-        setPositionCode('');
-        setPositionName('');
-        setEditingId(null);
-        await fetchPositions();
-    } catch (e: any) {
-        setError(e?.message || 'Save failed');
-    }
-}
-
-function startEdit(p: Position) {
-    setEditingId(p.position_id ?? null);
-    setPositionCode(p.position_code);
-    setPositionName(p.position_name);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-async function handleDelete(id?: number) {
-    if (!id) return;
-    if (!confirm('Delete this position?')) return;
-    setError(null);
-    try {
-        const res = await fetch(`${API_BASE}/positions/${id}`, {
-            method: 'DELETE',
-            headers: authHeaders(),
-        });
-
-        if (res.status === 401) {
-            logoutUser();
-            router.push('/login');
-            return;
-        }
-
-        if (!res.ok) throw new Error(`Delete failed: ${res.status}`);
-        await fetchPositions();
-    } catch (e: any) {
-        setError(e?.message || 'Delete failed');
-    }
-}
-
-            function handleCancelEdit() {
-                setEditingId(null);
-                setPositionCode('');
-                setPositionName('');
-            }
-
-            function handleLogout() {
                 logoutUser();
                 router.push('/login');
+                return;
             }
 
-            return (
-                <div className="min-h-screen bg-slate-50 p-6">
-                    <div className="max-w-4xl mx-auto">
-                        <header className="flex items-center justify-between mb-6">
-                            <h1 className="text-2xl font-bold">Positions Dashboard</h1>
-                            <div className="flex items-center gap-3">
-                                <Button variant="outline" onClick={() => fetchPositions()}>Refresh</Button>
-                                <Button variant="destructive" onClick={handleLogout}>Logout</Button>
-                            </div>
-                        </header>
+            if (!res.ok) {
+                const err = await res.json().catch(() => ({}));
+                throw new Error(err?.message || `Request failed: ${res.status}`);
+            }
 
-                        <Card className="mb-6">
-                            <CardContent>
-                                <h2 className="text-lg font-semibold mb-2">{editingId ? 'Edit Position' : 'Create Position'}</h2>
-                                <form onSubmit={handleCreateOrUpdate} className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                                    <Input
-                                        placeholder="Position Code"
-                                        value={positionCode}
-                                        onChange={(e) => setPositionCode(e.target.value)}
-                                        required
-                                    />
-                                    <Input
-                                        placeholder="Position Name"
-                                        value={positionName}
-                                        onChange={(e) => setPositionName(e.target.value)}
-                                        required
-                                    />
+            setPositionCode('');
+            setPositionName('');
+            setEditingId(null);
+            await fetchPositions();
+        } catch (e: any) {
+            setError(e?.message || 'Save failed');
+        }
+    }
 
-                                    <div className="flex gap-2">
-                                        <Button type="submit">{editingId ? 'Update' : 'Create'}</Button>
-                                        {editingId && (
-                                            <Button variant="outline" onClick={handleCancelEdit}>Cancel</Button>
-                                        )}
-                                    </div>
-                                </form>
-                                {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
-                            </CardContent>
-                        </Card>
+    function startEdit(p: Position) {
+        setEditingId(p.position_id ?? null);
+        setPositionCode(p.position_code);
+        setPositionName(p.position_name);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-                        <section>
+    async function handleDelete(id?: number) {
+        if (!id) return;
+        if (!confirm('Delete this position?')) return;
+        setError(null);
 
-                            <h2 className="text-lg font-semibold mb-2">Positions List {loading && ('loading...')}</h2>
+        try {
+            const res = await fetch(`${API_BASE}/positions/${id}`, {
+                method: 'DELETE',
+                headers: authHeaders(),
+            });
 
-                            <div className="overflow-x-auto bg-white rounded shadow">
-                                <table className="w-full text-left">
-                                    <thead className="bg-slate-100">
-                                        <tr>
-                                            <th className="px-4 py-2">ID</th>
-                                            <th className="px-4 py-2">Code</th>
-                                            <th className="px-4 py-2">Name</th>
-                                            <th className="px-4 py-2">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {positions.length === 0 && !loading && (
-                                            <tr>
-                                                <td colSpan={4} className="px-4 py-6 text-center text-sm text-slate-500">No positions found.</td>
-                                            </tr>
-                                        )}
+            if (res.status === 401) {
+                logoutUser();
+                router.push('/login');
+                return;
+            }
 
-                                        {positions.map((p) => (
-                                            <tr key={p.position_id} className="border-t">
-                                                <td className="px-4 py-2 align-top">{p.position_id}</td>
-                                                <td className="px-4 py-2 align-top">{p.position_code}</td>
-                                                <td className="px-4 py-2 align-top">{p.position_name}</td>
-                                                <td className="px-4 py-2 align-top">
-                                                    <div className="flex gap-2">
-                                                        <Button variant="outline" size="sm" onClick={() => startEdit(p)}>Edit</Button>
-                                                        <Button variant="destructive" size="sm" onClick={() => handleDelete(p.position_id)}>Delete</Button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
+            if (!res.ok) throw new Error(`Delete failed: ${res.status}`);
+            await fetchPositions();
+        } catch (e: any) {
+            setError(e?.message || 'Delete failed');
+        }
+    }
+
+    function handleCancelEdit() {
+        setEditingId(null);
+        setPositionCode('');
+        setPositionName('');
+    }
+
+    function handleLogout() {
+        logoutUser();
+        router.push('/login');
+    }
+
+    function handleDashboard() {
+        router.push('/dashboard');
+    }
+
+    return (
+        <div className="min-h-screen bg-white/20 p-6">
+            <div className="max-w-4xl mx-auto">
+                <header className="flex items-center justify-between mb-6">
+                    <h1 className="text-2xl font-bold">Positions Dashboard</h1>
+                    <div className="flex items-center gap-3">
+                        <Button variant="outline" onClick={() => fetchPositions()}>Refresh</Button>
+                        <Button variant="destructive" onClick={handleLogout}>Logout</Button>
                     </div>
-                </div>
-            );
-        };
+                </header>
 
-        
+                <Card className="mb-6">
+                    <CardContent>
+                        <h2 className="text-lg font-semibold mb-2">
+                            {editingId ? 'Edit Position' : 'Create Position'}
+                        </h2>
+
+                        <form onSubmit={handleCreateOrUpdate} className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <Input
+                                placeholder="Position Code"
+                                value={positionCode}
+                                onChange={(e) => setPositionCode(e.target.value)}
+                                required
+                            />
+                            <Input
+                                placeholder="Position Name"
+                                value={positionName}
+                                onChange={(e) => setPositionName(e.target.value)}
+                                required
+                            />
+                            <div className="flex gap-2">
+                                <Button type="submit">{editingId ? 'Update' : 'Create'}</Button>
+                                {editingId && (
+                                    <Button variant="outline" onClick={handleCancelEdit}>Cancel</Button>
+                                )}
+                            </div>
+                        </form>
+
+                        {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
+                    </CardContent>
+                </Card>
+
+                <section>
+                    <h2 className="text-lg font-semibold mb-2">
+                        Positions List {loading && 'loading...'}
+                    </h2>
+
+                    <div className="overflow-x-auto bg-white rounded shadow">
+                        <table className="w-full text-left">
+                            <thead className="bg-slate-100">
+                                <tr>
+                                    <th className="px-4 py-2">ID</th>
+                                    <th className="px-4 py-2">Code</th>
+                                    <th className="px-4 py-2">Name</th>
+                                    <th className="px-4 py-2">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {positions.length === 0 && !loading && (
+                                    <tr>
+                                        <td colSpan={4} className="px-4 py-6 text-center text-sm text-slate-500">
+                                            No positions found.
+                                        </td>
+                                    </tr>
+                                )}
+
+                                {positions.map((p) => (
+                                    <tr key={p.position_id} className="border-t">
+                                        <td className="px-4 py-2">{p.position_id}</td>
+                                        <td className="px-4 py-2">{p.position_code}</td>
+                                        <td className="px-4 py-2">{p.position_name}</td>
+                                        <td className="px-4 py-2">
+                                            <div className="flex gap-2">
+                                                <Button variant="outline" size="sm" onClick={() => startEdit(p)}>Edit</Button>
+                                                <Button variant="destructive" size="sm" onClick={() => handleDelete(p.position_id)}>Delete</Button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <div>
+                <Button
+                    variant="outline"
+                    onClick={handleDashboard}
+                    className="justify-center items-center"
+                >
+                    Back to Dashboard
+                </Button>
+            </div>
+        </div>
+    );
+}

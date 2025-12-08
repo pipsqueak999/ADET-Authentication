@@ -283,8 +283,9 @@ export default function DashboardHome() {
                                                 <Button
                                                 variant="outline" 
                                                 onClick={handleCredibilities}
+                                                className="w-full cursor-pointer text-lg font-bold bg-white/20"
                                                 >
-                                                    Credebilities
+                                                    Credibilities
                                                 </Button>
                                                 
                                                 </div>
